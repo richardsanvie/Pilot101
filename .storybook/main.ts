@@ -5,9 +5,7 @@ const config = {
   framework: {
     name: '@storybook/nextjs',
     options: {}
-  },
-  docs: {
-    autodocs: true
   }
 }
+
 export default config
