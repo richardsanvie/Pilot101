@@ -16,6 +16,7 @@ describe('<Button />', () => {
 
     expect(container.firstChild).toMatchSnapshot()
   })
+  
   it('should render the small size', () => {
     renderWithTheme(<Button size="small">Buy now</Button>)
     expect(screen.getByRole('button', { name: /Buy now/i })).toHaveStyle({
@@ -23,6 +24,7 @@ describe('<Button />', () => {
       'font-size': '1.2rem'
     })
   })
+  
   it('should render the large size', () => {
     renderWithTheme(<Button size="large">Buy now</Button>)
 
@@ -39,6 +41,7 @@ describe('<Button />', () => {
       width: '100%'
     })
   })
+  
   it('should render an icon version', () => {
     renderWithTheme(
       <Button icon={<AddShoppingCart data-testid="icon" />}>Buy now</Button>
@@ -47,4 +50,18 @@ describe('<Button />', () => {
     expect(screen.getByText(/buy now/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render Button as a link', () => {
+    const {debug, container} = renderWithTheme(
+      <Button as="a" href='/link'>Buy now</Button>
+    )
+
+    debug(container)
+
+    expect(screen.getByRole('link', {name: /buy now/i})).toHaveAttribute(
+      'href',
+      '/link'
+    )
+  })
+
 })
