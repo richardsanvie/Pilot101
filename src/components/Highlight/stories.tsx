@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
 import Highlight, { HighlightProps } from '.'
-import { FloatImage, Subtitle } from './styles'
 
 export default {
   title: 'Highlight',
