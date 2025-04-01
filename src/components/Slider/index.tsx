@@ -1,4 +1,3 @@
-// import SlickSlider, { Settings } from 'react-slick'
 import SlickSlider, { Settings } from 'react-slick'
 
 import * as S from './styles'
@@ -12,10 +11,7 @@ export type SliderProps = {
 
 const Slider = ({ children, settings }: SliderProps) => (
   <S.Wrapper>
-    <SlickSlider {...settings}>
-      {children}
-    </SlickSlider>
-
+    <SlickSlider {...settings}>{children}</SlickSlider>
   </S.Wrapper>
 )
 
