@@ -7,7 +7,7 @@ import GameCard from '.'
 const props = {
   title: 'Population Zero',
   developer: 'Rockstar Games',
-  img: 'https://source.unsplash.com/user/willianjusten/300x140',
+  img: 'https://picsum.photos/300/140',
   price: 'R$ 235,00'
 }
 

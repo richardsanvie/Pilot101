@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Button from '../Button'
 import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
@@ -39,7 +40,7 @@ const GameCard = ({
       </Ribbon>
     )}
     <S.ImageBox>
-      <img src={img} alt="title" />
+      <Image src={img} alt="title" width={300} height={140} />
     </S.ImageBox>
     <S.Content>
       <S.Info>

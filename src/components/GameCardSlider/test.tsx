@@ -1,10 +1,61 @@
-import { render, screen } from '@testing-library/react'
+import 'match-media-mock'
+import { renderWithTheme } from '@/utils/tests/helpers'
+import { screen } from '@testing-library/react'
+
 import GameCardSlider from '.'
 
-describe('<GameCardSlider />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<GameCardSlider />)
-    expect(screen.getByRole('heading', { name: /GameCardSlider/i })).toBeInTheDocument()
-    // expect(container.firstChild).toMatchSnapshot()
+const items = [
+  {
+    title: 'Population Zero',
+    developer: 'Rockstar Games',
+    img: 'https://picsum.photos/1042/140',
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 215,00'
+  },
+  {
+    title: 'Population Zero',
+    developer: 'Rockstar Games',
+    img: 'https://picsum.photos/1042/141',
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 215,00'
+  },
+  {
+    title: 'Population Zero',
+    developer: 'Rockstar Games',
+    img: 'https://picsum.photos/1042/142',
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 215,00'
+  },
+  {
+    title: 'Population Zero',
+    developer: 'Rockstar Games',
+    img: 'https://picsum.photos/1042/143',
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 215,00'
+  },
+  {
+    title: 'Population Zero',
+    developer: 'Rockstar Games',
+    img: 'https://picsum.photos/1042/144',
+    price: 'R$ 235,00',
+    promotionalPrice: 'R$ 215,00'
+  }
+]
+
+describe('<GameSlider />', () => {
+  it('should render with 4 active items', () => {
+    const { container } = renderWithTheme(<GameCardSlider items={items} />)
+    expect(container.querySelectorAll('.slick-active')).toHaveLength(4)
+  })
+
+  it('should render white arrows if color passed', () => {
+    renderWithTheme(<GameCardSlider items={items} color="white" />)
+
+    expect(screen.getByLabelText(/previous games/i)).toHaveStyle({
+      color: '#FAFAFA'
+    })
+    expect(screen.getByLabelText(/next games/i)).toHaveStyle({
+      color: '#FAFAFA'
+    })
   })
 })
