@@ -26,13 +26,19 @@ const GlobalStyles = createGlobalStyle`
     src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
         url('/fonts/Poppins-SemiBold.ttf') format('truetype');
   }
+
   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    
+      &::before, &::after{
+        box-sizing: inherit;
+      }
   }
+
   html, body, #__next {
     height: 100%;
     }
@@ -45,7 +51,7 @@ const GlobalStyles = createGlobalStyle`
       body {
         font-family: ${theme.font.family};
         font-size: ${theme.font.sizes.medium};
-        background-color: ${theme.border.radius};
+        background-color: ${theme.colors.mainBg};
       }
     `}
 `
