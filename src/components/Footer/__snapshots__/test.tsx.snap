@@ -232,23 +232,17 @@ exports[`<Footer /> should render 4 column topics 1`] = `
         <a
           href="/"
         >
-          <a>
-            Home
-          </a>
+          Home
         </a>
         <a
           href="/games"
         >
-          <a>
-            Store
-          </a>
+          Store
         </a>
         <a
           href="/search"
         >
-          <a>
-            Buscar
-          </a>
+          Buscar
         </a>
       </nav>
     </div>
