@@ -1,6 +1,20 @@
 'use client'
-import Main from '@/components/Main'
+import Home from '../templates/Home'
 
-export default function Home() {
-  return <Main />
+export default async function Index() {
+  const props = {
+    heading: 'Olha eu aqui',
+  }
+
+
+  return <Home {...props} />
 }
+
+// export function getServerSideProps() {
+
+//   return {
+//     props: {
+//       heading: 'Olha eu aqui'
+//     }
+//   }
+// }
