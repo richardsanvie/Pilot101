@@ -1,20 +1,15 @@
 'use client'
-import Home from '../templates/Home'
+import Home, { HomeTemplateProps } from '../templates/Home'
+import bannersMock from '@/components/BannerSlider/mock'
+import gamesMock from '@/components/GameCardSlider/mock'
+import highlightMock from '@/components/Highlight/mock'
 
-export default async function Index() {
-  const props = {
-    heading: 'Olha eu aqui',
+export default function Page(props: HomeTemplateProps) {
+  const Homeprops = {
+    banners: bannersMock,
+    mostPopularHighlight: highlightMock,
+    mostPopularGames: gamesMock,
   }
 
-
-  return <Home {...props} />
+  return <Home {...Homeprops} />
 }
-
-// export function getServerSideProps() {
-
-//   return {
-//     props: {
-//       heading: 'Olha eu aqui'
-//     }
-//   }
-// }

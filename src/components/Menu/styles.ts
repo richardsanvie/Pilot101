@@ -82,7 +82,7 @@ export const MenuLink = styled.a`
 `
 
 type MenuFullProps = {
-    isOpen: boolean
+  isOpen: boolean
 }
 
 export const MenuFull = styled.nav<MenuFullProps>`
@@ -91,7 +91,8 @@ export const MenuFull = styled.nav<MenuFullProps>`
         flex-direction: column;
         justify-content: space-between;
         background: ${theme.colors.white};
-        position: absolute;
+        position: fixed;
+        z-index: ${theme.layers.menu};
         top: 0;
         bottom: 0;
         left: 0;
